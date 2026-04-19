@@ -6,7 +6,7 @@
 
 <!-- ── SEO FONDAMENTAL ── -->
 <title>Klïck — Agence Web Paris | Sites web professionnels pour TPE & artisans</title>
-<meta name="description" content="Klïck crée des sites web modernes, rapides et optimisés SEO pour artisans, commerçants et TPE/PME. Design premium, livraison en 7 jours. À partir de 690€.">
+<meta name="description" content="Klïck crée des sites web modernes, rapides et optimisés SEO pour artisans, commerçants et TPE/PME. Design premium, livraison en 7 jours. À partir de 900€.">
 <meta name="keywords" content="agence web Paris, création site web, site vitrine, refonte site internet, SEO, référencement naturel, site responsive, TPE PME artisans">
 <meta name="author" content="Klïck Agence Web">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Klïck Agence Web">
 <meta property="og:title" content="Klïck — Agence Web Paris | Sites web qui génèrent des clients">
-<meta property="og:description" content="Création de sites web professionnels pour artisans, commerçants et TPE/PME. Design premium, SEO intégré, livraison en 7 jours. À partir de 690€.">
+<meta property="og:description" content="Création de sites web professionnels pour artisans, commerçants et TPE/PME. Design premium, SEO intégré, livraison en 7 jours. À partir de 900€.">
 <meta property="og:url" content="https://klick-agence.fr/">
 <meta property="og:image" content="https://klick-agence.fr/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -27,7 +27,7 @@
 <!-- ── TWITTER CARD ── -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Klïck — Agence Web Paris | Sites web qui génèrent des clients">
-<meta name="twitter:description" content="Création de sites web professionnels pour artisans, commerçants et TPE/PME. Livraison en 7 jours. À partir de 690€.">
+<meta name="twitter:description" content="Création de sites web professionnels pour artisans, commerçants et TPE/PME. Livraison en 7 jours. À partir de 900€.">
 <meta name="twitter:image" content="https://klick-agence.fr/og-image.jpg">
 
 <!-- ── GEO & LANGUE ── -->
@@ -91,7 +91,7 @@
       "description": "Site vitrine professionnel 1 page, design moderne, responsive, formulaire de contact. Livraison en 7 jours.",
       "offers": {
         "@type": "Offer",
-        "price": "690",
+        "price": "900",
         "priceCurrency": "EUR",
         "availability": "https://schema.org/InStock"
       }
@@ -103,7 +103,7 @@
       "description": "Site web 3 à 5 pages + blog, design premium sur-mesure, SEO avancé, optimisation conversion. Livraison en 10 jours.",
       "offers": {
         "@type": "Offer",
-        "price": "1490",
+        "price": "1900",
         "priceCurrency": "EUR",
         "availability": "https://schema.org/InStock"
       }
@@ -115,7 +115,7 @@
       "description": "Refonte complète de site web, audit approfondi, migration de contenu, SEO expert, 3 mois de maintenance offerts.",
       "offers": {
         "@type": "Offer",
-        "price": "2490",
+        "price": "2900",
         "priceCurrency": "EUR",
         "availability": "https://schema.org/InStock"
       }
@@ -635,30 +635,169 @@ footer {
 @media(max-width:960px){
   body { cursor:auto; }
   #cur,#cur2 { display:none; }
-  nav { padding:0 20px; }
+
+  /* NAV */
+  nav { padding:0 20px; height:56px; }
   .nav-center,.nav-line { display:none; }
-  .hero { grid-template-columns:1fr; }
+  .nav-cta { font-size:.65rem; padding:8px 14px; }
+
+  /* HERO */
+  .hero { grid-template-columns:1fr; min-height:auto; }
   .hero::after { display:none; }
-  .hero-left,.hero-right { padding:80px 20px 40px; }
-  .wrap { padding:72px 20px; }
-  .svc-layout { grid-template-columns:1fr; gap:40px; }
-  .svc-sticky { position:static; }
+  .hero-left { padding:90px 20px 32px; }
+  .hero-right { padding:0 20px 56px; }
+  .h1-word { font-size:clamp(2.6rem,9vw,4.5rem) !important; }
+  .hero-sub { font-size:.9rem; }
+  .hero-actions { flex-direction:column; align-items:flex-start; gap:14px; }
+  .btn-gold { width:100%; text-align:center; justify-content:center; }
+  .scroll-hint { display:none; }
+  .hero-img { height:200px; object-fit:cover; }
+  .metric-row { grid-template-columns:1fr 1fr; gap:8px; }
+  .metric-val { font-size:1rem !important; }
+  .metric-label { font-size:.6rem; }
+  .feature-list { gap:8px; }
+
+  /* WRAP */
+  .wrap { padding:56px 20px; }
+
+  /* SECTIONS GÉNÉRALES — inline grid 1fr 1fr → 1fr */
+  .sec-title { font-size:clamp(1.8rem,7vw,2.8rem); }
+  .sec-body { font-size:.85rem; }
+
+  /* PROBLÈME / SOLUTION / EXPERTISE — grilles inline */
+  div[style*="grid-template-columns:1fr 1fr;gap:80px"],
+  div[style*="grid-template-columns:1fr 1fr;gap:60px"],
+  div[style*="grid-template-columns:1fr 1fr;gap:2px"] {
+    grid-template-columns:1fr !important;
+    gap:32px !important;
+  }
+
+  /* EXPERTISE 2 colonnes */
+  div[style*="grid-template-columns:1fr 1fr;gap:2px;background:var(--wire)"] {
+    grid-template-columns:1fr !important;
+    gap:2px !important;
+  }
+
+  /* CTA BANDS padding + flex */
+  div[style*="padding:56px 60px"] {
+    padding:40px 20px !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:24px !important;
+  }
+  div[style*="padding:56px 60px"] .btn-gold {
+    width:auto;
+  }
+
+  /* AVANT / APRÈS section */
+  section[style*="padding:100px 60px"] {
+    padding:56px 20px !important;
+  }
+  section[style*="padding:80px 60px"] {
+    padding:56px 20px !important;
+  }
+
+  /* AVANT / APRÈS grilles images */
+  div[style*="grid-template-columns:1fr 1fr;gap:3px"] {
+    grid-template-columns:1fr !important;
+    gap:2px !important;
+  }
+  div[style*="grid-template-columns:1fr 1fr;gap:3px"] img {
+    height:180px !important;
+  }
+
+  /* STATS sous avant/après (3 colonnes → 2) */
+  div[style*="grid-template-columns:repeat(3,1fr);gap:1px"] {
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  /* PRICING maintenance 2 colonnes */
+  div[style*="grid-template-columns:1fr 1fr;margin-top:2px"] {
+    grid-template-columns:1fr !important;
+  }
+
+  /* GALLERY */
   .gal-head { grid-template-columns:1fr; gap:20px; }
   .gallery { grid-template-columns:1fr; grid-template-rows:auto; }
   .gc.tall { grid-row:span 1; }
   .gc img { height:200px; }
-  .band-inner { grid-template-columns:1fr 1fr; padding:40px 20px; }
+
+  /* STATS BAND */
+  .band-inner { grid-template-columns:1fr 1fr; padding:32px 20px; gap:0; }
   .band-item { padding:16px; border-right:none; border-bottom:1px solid var(--wire); }
+  .band-item:nth-child(odd) { border-right:1px solid var(--wire); }
+  .band-item:last-child,.band-item:nth-last-child(2):nth-child(odd) { border-bottom:none; }
+  .band-num { font-size:2.2rem !important; }
+
+  /* SERVICE LAYOUT */
+  .svc-layout { grid-template-columns:1fr; gap:40px; }
+  .svc-sticky { position:static; }
+  .svc-img-frame { display:none; }
+
+  /* PROCESS */
   .process-grid { grid-template-columns:1fr; }
+  .pc { padding:28px 24px; }
+
+  /* PRICING */
   .plans { grid-template-columns:1fr; }
   .plan { border-right:none; border-bottom:1px solid var(--wire); }
   .plan:last-child { border-bottom:none; }
-  .cta-section { padding:80px 20px; }
-  .cta-form { flex-direction:column; }
-  .faq-layout { grid-template-columns:1fr; gap:40px; }
+  .plan-price { font-size:3rem; }
+
+  /* TÉMOIGNAGES 3 colonnes → 1 */
+  div[style*="grid-template-columns:repeat(3,1fr);gap:2px"] {
+    grid-template-columns:1fr !important;
+    gap:2px !important;
+  }
+
+  /* CONTACT */
+  .cta-section { padding:60px 20px; }
+  .cta-title { font-size:clamp(2.2rem,9vw,4rem) !important; }
+  .cta-inner { max-width:100%; }
+  div[style*="width:520px"] { width:100% !important; }
+  #fs-form { padding:20px !important; }
+
+  /* Bouton calendly contact */
+  div[style*="display:flex;gap:14px"] {
+    flex-direction:column !important;
+    align-items:stretch !important;
+  }
+
+  /* FAQ */
+  .faq-layout { grid-template-columns:1fr; gap:32px; }
+  .faq-media { display:none; }
+  .fq-q { font-size:.85rem; }
+
+  /* FOOTER */
   footer { padding:48px 20px 32px; }
-  .foot-top { grid-template-columns:1fr 1fr; gap:28px; }
+  .foot-top { grid-template-columns:1fr 1fr; gap:24px; }
   .foot-bottom { flex-direction:column; gap:12px; text-align:center; }
+}
+
+/* ── TRÈS PETIT MOBILE (< 480px) ── */
+@media(max-width:480px){
+  .h1-word { font-size:2.4rem !important; }
+  .metric-row { grid-template-columns:1fr 1fr; }
+  .band-inner { grid-template-columns:1fr; }
+  .band-item { border-right:none !important; border-bottom:1px solid var(--wire); }
+  .band-item:last-child { border-bottom:none; }
+  .foot-top { grid-template-columns:1fr; }
+  div[style*="grid-template-columns:repeat(3,1fr);gap:1px"] {
+    grid-template-columns:1fr !important;
+  }
+  .plan-sel { flex-wrap:wrap; gap:8px; }
+}
+
+/* ── TABLETTE (961px–1200px) ── */
+@media(min-width:961px) and (max-width:1200px){
+  .wrap { padding:80px 32px; }
+  nav { padding:0 32px; }
+  .hero-left { padding:120px 32px 60px; }
+  .hero-right { padding:120px 32px 60px; }
+  section[style*="padding:100px 60px"] { padding:80px 32px !important; }
+  section[style*="padding:80px 60px"] { padding:80px 32px !important; }
+  div[style*="padding:56px 60px"] { padding:48px 32px !important; }
+  .foot-top { grid-template-columns:1.2fr 1fr 1fr 1fr; gap:24px; }
 }
 </style>
 
@@ -746,7 +885,7 @@ footer {
   <div class="hero-right">
     <div class="hero-img-wrap r tilt">
       <div class="tilt-shine"></div>
-      <img id="hero-image" class="hero-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=85" alt="Dashboard analytics site web professionnel — Klïck agence web Paris" loading="eager" fetchpriority="high" width="900" height="300">
+      <img id="hero-image" class="hero-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=85" alt="Dashboard analytics site web professionnel — Klïck agence web Paris" loading="eager" fetchpriority="high" width="900" height="300">
       <div class="hero-img-overlay">
         <div>
           <div class="img-kpi" id="hero-kpi">Résultats</div>
@@ -761,8 +900,8 @@ footer {
         <div class="live-bar"><div class="live-bar-fill" data-w="100"></div></div>
       </div>
       <div class="metric">
-        <div class="metric-val" style="font-size:1.3rem;">À partir<em style="font-size:.9rem;"> de 690€</em></div>
-        <div class="metric-label">Formule Essentiel</div>
+        <div class="metric-val" style="font-size:1.3rem;">À partir<em style="font-size:.9rem;"> de 900€</em></div>
+        <div class="metric-label">Projets récents</div>
         <div class="live-bar"><div class="live-bar-fill" data-w="30"></div></div>
       </div>
       <div class="metric">
@@ -963,14 +1102,14 @@ footer {
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--wire);">
         <div style="position:relative;overflow:hidden;">
           <div style="position:absolute;top:16px;left:16px;z-index:2;background:rgba(10,10,10,.85);border:1px solid var(--wire);padding:5px 14px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,.5);">Avant</div>
-          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=700&q=70" alt="Avant refonte site web cabinet conseil" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.45) saturate(.2) sepia(.3);transition:filter .5s;">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=70" alt="Avant refonte site web cabinet conseil" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.45) saturate(.2) sepia(.3);transition:filter .5s;">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,6,.9) 0%,transparent 50%);padding:20px;display:flex;flex-direction:column;justify-content:flex-end;">
             <div style="font-size:.8rem;color:rgba(245,240,232,.4);font-weight:300;">Site vieillissant, non responsive, invisible sur Google</div>
           </div>
         </div>
         <div style="position:relative;overflow:hidden;">
           <div style="position:absolute;top:16px;left:16px;z-index:2;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);padding:5px 14px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);">Après</div>
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" alt="Après refonte site web cabinet conseil Paris" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.7) saturate(.7);transition:filter .5s;">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200581393b9?w=700&q=80" alt="Après refonte site web cabinet conseil Paris" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.7) saturate(.7);transition:filter .5s;">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,6,.9) 0%,transparent 50%);padding:20px;display:flex;flex-direction:column;justify-content:flex-end;">
             <div style="font-size:.8rem;color:rgba(245,240,232,.7);font-weight:300;">Design soigné, SEO optimisé, premières demandes dès la mise en ligne</div>
           </div>
@@ -1001,14 +1140,14 @@ footer {
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--wire);">
         <div style="position:relative;overflow:hidden;">
           <div style="position:absolute;top:16px;left:16px;z-index:2;background:rgba(10,10,10,.85);border:1px solid var(--wire);padding:5px 14px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,.5);">Avant</div>
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=70" alt="Avant refonte site web restaurant" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.4) saturate(.15) sepia(.4);transition:filter .5s;">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&q=70" alt="Avant refonte site web restaurant" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.4) saturate(.15) sepia(.4);transition:filter .5s;">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,6,.9) 0%,transparent 50%);padding:20px;display:flex;flex-direction:column;justify-content:flex-end;">
             <div style="font-size:.8rem;color:rgba(245,240,232,.4);font-weight:300;">Pas de réservation en ligne, aucun référencement local</div>
           </div>
         </div>
         <div style="position:relative;overflow:hidden;">
           <div style="position:absolute;top:16px;left:16px;z-index:2;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);padding:5px 14px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);">Après</div>
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Après refonte site web restaurant gastronomique" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.7) saturate(.7);transition:filter .5s;">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=700&q=80" alt="Après refonte site web restaurant gastronomique" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.7) saturate(.7);transition:filter .5s;">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,6,.9) 0%,transparent 50%);padding:20px;display:flex;flex-direction:column;justify-content:flex-end;">
             <div style="font-size:.8rem;color:rgba(245,240,232,.7);font-weight:300;">Réservations en ligne, meilleure visibilité locale, image professionnelle</div>
           </div>
@@ -1047,23 +1186,23 @@ footer {
     </div>
     <div class="gallery r">
       <div class="gc tall">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" alt="Site vitrine professionnel cabinet conseil Paris — réalisation Klïck" loading="lazy" width="700" height="560">
+        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80" alt="Site vitrine professionnel cabinet conseil Paris — réalisation Klïck" loading="lazy" width="700" height="560">
         <div class="gc-info"><span class="gc-tag">Site vitrine</span><div class="gc-name">Cabinet conseil — Paris</div></div>
       </div>
       <div class="gc">
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Refonte site web boutique artisanale Lyon — agence Klïck" loading="lazy" width="600" height="280">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Refonte site web boutique artisanale Lyon — agence Klïck" loading="lazy" width="600" height="280">
         <div class="gc-info"><span class="gc-tag">Refonte</span><div class="gc-name">Boutique artisanale — Lyon</div></div>
       </div>
       <div class="gc">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Création site web restaurant gastronomique Bordeaux — SEO local" loading="lazy" width="600" height="280">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Création site web restaurant gastronomique Bordeaux — SEO local" loading="lazy" width="600" height="280">
         <div class="gc-info"><span class="gc-tag">SEO + Vitrine</span><div class="gc-name">Restaurant gastronomique — Bordeaux</div></div>
       </div>
       <div class="gc">
-        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&q=80" alt="Site web studio créatif Marseille — design responsive moderne" loading="lazy" width="600" height="280">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80" alt="Site web studio créatif Marseille — design responsive moderne" loading="lazy" width="600" height="280">
         <div class="gc-info"><span class="gc-tag">Refonte</span><div class="gc-name">Studio créatif — Marseille</div></div>
       </div>
       <div class="gc">
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Site vitrine cabinet architecture Lille — création web professionnelle" loading="lazy" width="600" height="280">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Site vitrine cabinet architecture Lille — création web professionnelle" loading="lazy" width="600" height="280">
         <div class="gc-info"><span class="gc-tag">Site vitrine</span><div class="gc-name">Cabinet d'architecture — Lille</div></div>
       </div>
     </div>
@@ -1074,9 +1213,9 @@ footer {
 <div class="band">
   <div class="band-inner r" id="stats-band">
     <div class="band-item"><div class="band-num" id="stat-0" style="font-size:2.5rem;">7<em>j</em></div><div class="band-label" id="stat-label-0">Délai de livraison</div></div>
-    <div class="band-item"><div class="band-num" id="stat-1" style="font-size:1.6rem;">À partir<em style="font-size:1.1rem;"> de 690€</em></div><div class="band-label" id="stat-label-1">Formule Essentiel</div></div>
-    <div class="band-item"><div class="band-num" id="stat-2" style="font-size:2rem;">48<em>h</em></div><div class="band-label" id="stat-label-2">Délai de réponse</div></div>
-    <div class="band-item"><div class="band-num" id="stat-3" style="font-size:1.6rem;">100<em>%</em></div><div class="band-label" id="stat-label-3">Sans engagement</div></div>
+    <div class="band-item"><div class="band-num" id="stat-1" style="font-size:1.6rem;">À partir<em style="font-size:1.1rem;"> de 900€</em></div><div class="band-label" id="stat-label-1">Projets récents</div></div>
+    <div class="band-item"><div class="band-num" id="stat-2" style="font-size:1.1rem;">Optimisé<em style="font-size:.85rem;"> conversion</em></div><div class="band-label" id="stat-label-2">Chaque page pensée pour convertir</div></div>
+    <div class="band-item"><div class="band-num" id="stat-3" style="font-size:1.1rem;">Accomp.<em style="font-size:.85rem;"> perso</em></div><div class="band-label" id="stat-label-3">Suivi de A à Z</div></div>
   </div>
 </div>
 
@@ -1125,44 +1264,46 @@ footer {
       <div class="plan">
         <div class="plan-top"></div>
         <div class="plan-name">Essentiel</div>
-        <div class="plan-price">690<sup>€</sup></div>
+        <div class="plan-price">900<sup>€</sup></div>
         <div class="plan-note" style="font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-size:.9rem;">Une présence professionnelle immédiate</div>
         <div class="plan-divider"></div>
         <ul class="plan-feats">
-          <li>Site vitrine 1 page professionnel</li>
+          <li>Site vitrine professionnel</li>
           <li>Design moderne et responsive</li>
           <li>Intégration de vos contenus</li>
           <li>Formulaire de contact inclus</li>
           <li>Optimisation de base</li>
           <li>Audit rapide inclus</li>
         </ul>
-        <a href="#contact" class="plan-btn" onclick="selectPlan('Essentiel — 690€')"><span>Démarrer</span></a>
+        <a href="#contact" class="plan-btn" onclick="selectPlan('Essentiel — 900€')"><span>Démarrer</span></a>
+        <div style="text-align:center;margin-top:12px;font-size:.68rem;color:var(--smoke);font-weight:300;">ou <span style="color:var(--gold);">3×300€</span> sans frais</div>
       </div>
       <div class="plan feat" style="position:relative;">
         <div class="plan-top"></div>
         <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--void);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 18px;border-radius:0 0 8px 8px;white-space:nowrap;">⭐ Offre la plus choisie</div>
         <div class="plan-name" style="margin-top:20px;">Business</div>
-        <div class="plan-price">1 490<sup>€</sup></div>
+        <div class="plan-price">1 900<sup>€</sup></div>
         <div class="plan-note" style="font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-size:.9rem;">Une solution conçue pour développer votre activité</div>
         <div class="plan-divider"></div>
         <ul class="plan-feats">
-          <li>Site complet (3 à 5 pages)</li>
+          <li>Site complet multipage</li>
           <li>Design personnalisé</li>
           <li>Optimisation du parcours client</li>
           <li>Structure SEO optimisée</li>
           <li>Appels à l'action performants</li>
           <li>Audit complet inclus</li>
         </ul>
-        <a href="#contact" class="plan-btn" onclick="selectPlan('Business — 1490€')"><span>Démarrer</span></a>
+        <a href="#contact" class="plan-btn" onclick="selectPlan('Business — 1900€')"><span>Démarrer</span></a>
+        <div style="text-align:center;margin-top:12px;font-size:.68rem;color:var(--smoke);font-weight:300;">ou <span style="color:var(--gold);">3×633€</span> sans frais</div>
       </div>
       <div class="plan">
         <div class="plan-top"></div>
         <div class="plan-name">Premium</div>
-        <div class="plan-price">2 490<sup>€</sup></div>
+        <div class="plan-price">2 900<sup>€</sup></div>
         <div class="plan-note" style="font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-size:.9rem;">Performance maximale et accompagnement avancé</div>
         <div class="plan-divider"></div>
         <ul class="plan-feats">
-          <li>Site sur mesure (5 pages et +)</li>
+          <li>Site sur mesure</li>
           <li>Design haut de gamme</li>
           <li>Expérience utilisateur optimisée</li>
           <li>SEO avancé</li>
@@ -1170,7 +1311,8 @@ footer {
           <li>Audit approfondi + tests complets</li>
           <li>Vérification de la fiabilité du site</li>
         </ul>
-        <a href="#contact" class="plan-btn" onclick="selectPlan('Premium — 2490€')"><span>Démarrer</span></a>
+        <a href="#contact" class="plan-btn" onclick="selectPlan('Premium — 2900€')"><span>Démarrer</span></a>
+        <div style="text-align:center;margin-top:12px;font-size:.68rem;color:var(--smoke);font-weight:300;">ou <span style="color:var(--gold);">3×967€</span> sans frais</div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;margin-top:2px;border:1px solid var(--wire);">
@@ -1178,6 +1320,10 @@ footer {
         <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);margin-bottom:8px;">Maintenance</div>
         <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:300;">À partir de <em style="font-style:italic;color:var(--gold);">49 €</em> <span style="font-size:.8rem;color:var(--smoke);font-weight:300;">/mois</span></div>
         <div style="font-size:.78rem;color:var(--smoke);margin-top:6px;font-weight:300;">Mises à jour · Sauvegardes · Suivi · Support</div>
+        <div style="margin-top:14px;padding:10px 14px;border:1px solid rgba(201,168,76,.25);background:rgba(201,168,76,.04);display:inline-flex;align-items:center;gap:8px;">
+          <span style="color:var(--gold);font-size:.8rem;">✦</span>
+          <span style="font-size:.72rem;color:var(--smoke);font-weight:300;">Paiement en <span style="color:var(--gold);font-weight:500;">3 fois sans frais</span> disponible sur toutes les formules</span>
+        </div>
       </div>
       <div style="background:var(--deep);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;">
         <div>
@@ -1213,7 +1359,7 @@ footer {
     <div style="width:520px;max-width:100%;margin:0 auto;">
 
       <!-- Formspree optimisé -->
-      <form id="fs-form" action="https://formspree.io/f/maqajbjn" method="POST" style="border:1px solid var(--wire);padding:32px;display:flex;flex-direction:column;gap:14px;background:rgba(255,255,255,0.02);">
+      <form id="fs-form" action="https://formspree.io/f/xpqkrvbl" method="POST" style="border:1px solid var(--wire);padding:32px;display:flex;flex-direction:column;gap:14px;background:rgba(255,255,255,0.02);">
         <input type="hidden" name="_subject" value="Nouvelle demande de devis Klïck">
 
         <input type="email" name="email" placeholder="Votre email" required
@@ -1232,9 +1378,9 @@ footer {
           style="width:100%;background:var(--deep);border:1px solid var(--wire);color:var(--ivory);padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none;appearance:none;cursor:pointer;transition:border-color .2s;"
           onfocus="this.style.borderColor='rgba(201,168,76,.5)'" onblur="this.style.borderColor='rgba(201,168,76,0.18)'">
           <option value="" style="background:var(--deep);">Formule souhaitée</option>
-          <option value="Essentiel — 690€" style="background:var(--deep);">Essentiel — 690€</option>
-          <option value="Business — 1490€" style="background:var(--deep);">Business — 1490€</option>
-          <option value="Premium — 2490€" style="background:var(--deep);">Premium — 2490€</option>
+          <option value="Essentiel — 900€" style="background:var(--deep);">Essentiel — 900€</option>
+          <option value="Business — 1900€" style="background:var(--deep);">Business — 1900€</option>
+          <option value="Premium — 2900€" style="background:var(--deep);">Premium — 2900€</option>
           <option value="Maintenance — 49€/mois" style="background:var(--deep);">Maintenance — 49€/mois</option>
           <option value="Je ne sais pas encore" style="background:var(--deep);">Je ne sais pas encore</option>
         </select>
@@ -1327,7 +1473,7 @@ footer {
         <div class="eyebrow">Questions</div>
         <h2 class="sec-title">Ce que<br>vous <em>demandez.</em></h2>
         <div class="faq-media" style="margin-top:36px">
-          <img class="faq-img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="Équipe Klïck agence web Paris — création de sites professionnels" loading="lazy" width="600" height="420">
+          <img class="faq-img" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80" alt="Équipe Klïck agence web Paris — création de sites professionnels" loading="lazy" width="600" height="420">
           <div class="faq-cap">Klïck — Paris, France · contact@klick-agence.fr</div>
         </div>
       </div>
@@ -1353,6 +1499,10 @@ footer {
           <div class="fq-a">Oui, à partir de 49€/mois : mises à jour, sauvegardes quotidiennes, suivi des performances et support prioritaire sous 4h.</div>
         </div>
         <div class="fq">
+          <div class="fq-q" onclick="faq(this)">Le paiement en plusieurs fois est-il possible ?<span class="fq-icon">+</span></div>
+          <div class="fq-a">Oui. Toutes nos formules sont disponibles en paiement 3 fois sans frais. Un acompte de 30% est demandé au démarrage, le solde est réglé en 2 versements égaux à la livraison et 30 jours après. Aucun frais supplémentaire.</div>
+        </div>
+        <div class="fq">
           <div class="fq-q" onclick="faq(this)">Pour quels types d'entreprises travaillez-vous ?<span class="fq-icon">+</span></div>
           <div class="fq-a">Artisans, commerçants, indépendants, TPE et PME. Toute entreprise qui veut un site à la hauteur de son activité et générateur de clients.</div>
         </div>
@@ -1362,6 +1512,20 @@ footer {
 </section>
 
 </main>
+
+<!-- SEO SECTION -->
+<section style="background:var(--deep);border-top:1px solid var(--wire);padding:60px 0;">
+  <div class="wrap" style="padding-top:0;padding-bottom:0;max-width:860px;">
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:1.5rem;letter-spacing:-.01em;color:var(--ivory);margin-bottom:12px;">Agence web à Paris</h2>
+    <p style="font-size:.85rem;color:var(--smoke);line-height:1.85;font-weight:300;margin-bottom:36px;">
+      Klïck est une agence web basée à Paris, spécialisée dans la création de sites vitrines pour artisans, commerçants et PME. Nous concevons des sites modernes, rapides et optimisés pour le référencement naturel (SEO).
+    </p>
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:1.5rem;letter-spacing:-.01em;color:var(--ivory);margin-bottom:12px;">Création de site internet professionnel</h2>
+    <p style="font-size:.85rem;color:var(--smoke);line-height:1.85;font-weight:300;">
+      Chaque site est pensé pour convertir vos visiteurs en clients, avec un design premium et une structure optimisée pour Google.
+    </p>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer role="contentinfo">
@@ -1611,9 +1775,9 @@ const bObs=new IntersectionObserver(en=>{
   en.forEach(e=>{
     if(e.isIntersecting){
       const ns=e.target.querySelectorAll('.band-num');
-      /* stats band: 7j / 690€ / 48h / 100% sans engagement */
+      /* stats band: 7j / 900€ / 48h / 100% sans engagement */
       if(ns[0]) ns[0].innerHTML='7<em>j</em>';
-      if(ns[1]) ns[1].innerHTML='690<em>€</em>';
+      if(ns[1]) ns[1].innerHTML='900<em>€</em>';
       if(ns[2]) ns[2].innerHTML='48<em>h</em>';
       if(ns[3]) ns[3].innerHTML='100<em>%</em>';
       bObs.disconnect();
