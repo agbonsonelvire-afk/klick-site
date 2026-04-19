@@ -1,0 +1,121 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+locale: fr
+
+collections:
+  - name: site
+    label: Contenu du site
+    files:
+      - name: home
+        label: Page d'accueil
+        file: content/home.json
+        format: json
+        fields:
+
+          # ── HERO ──
+          - label: "Hero — Titre"
+            name: hero_title
+            widget: string
+            hint: "Titre principal affiché en grand sur la page d'accueil"
+
+          - label: "Hero — Sous-titre"
+            name: hero_subtitle
+            widget: text
+            hint: "Texte descriptif sous le titre"
+
+          - label: "Hero — Bouton principal"
+            name: cta_text
+            widget: string
+
+          - label: "Hero — Bouton secondaire"
+            name: cta_secondary
+            widget: string
+
+          - label: "Hero — Image principale"
+            name: hero_image
+            widget: image
+            required: false
+            hint: "Image affichée dans le bloc hero (recommandé : 900x500px)"
+
+          - label: "Hero — KPI (ex: +3×)"
+            name: hero_kpi
+            widget: string
+
+          - label: "Hero — Label du KPI"
+            name: hero_kpi_label
+            widget: string
+
+          # ── SECTION PROBLÈME ──
+          - label: "Problème — Titre"
+            name: problem_title
+            widget: string
+
+          - label: "Problème — Sous-titre"
+            name: problem_subtitle
+            widget: text
+
+          # ── SECTION SOLUTION ──
+          - label: "Solution — Titre"
+            name: solution_title
+            widget: string
+
+          - label: "Solution — Texte"
+            name: solution_text
+            widget: text
+
+          # ── STATS ──
+          - label: "Stats"
+            name: stats
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { label: "Valeur (ex: 120+)", name: value, widget: string }
+              - { label: "Label (ex: Sites livrés)", name: label, widget: string }
+
+          # ── FORMULES ──
+          - label: "Formules — Titre section"
+            name: pricing_title
+            widget: string
+
+          - label: "Formule Essentiel — Prix"
+            name: price_starter
+            widget: string
+
+          - label: "Formule Business — Prix"
+            name: price_business
+            widget: string
+
+          - label: "Formule Premium — Prix"
+            name: price_premium
+            widget: string
+
+          - label: "Maintenance — Prix"
+            name: price_maintenance
+            widget: string
+
+          # ── CONTACT ──
+          - label: "Contact — Titre"
+            name: contact_title
+            widget: string
+
+          - label: "Contact — Sous-titre"
+            name: contact_subtitle
+            widget: string
+
+          - label: "Contact — Email"
+            name: contact_email
+            widget: string
+
+          # ── FOOTER ──
+          - label: "Footer — Tagline"
+            name: footer_tagline
+            widget: string
+
+          - label: "Footer — Copyright"
+            name: footer_copy
+            widget: string
