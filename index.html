@@ -1109,7 +1109,7 @@ footer {
         </div>
         <div style="position:relative;overflow:hidden;">
           <div style="position:absolute;top:16px;left:16px;z-index:2;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);padding:5px 14px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);">Après</div>
-          <img src="https://images.unsplash.com/photo-1497366754035-f200581393b9?w=700&q=80" alt="Après refonte site web cabinet conseil Paris" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.7) saturate(.7);transition:filter .5s;">
+          <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=700&q=80" alt="Après refonte site web cabinet conseil Paris" loading="lazy" width="700" height="420" style="width:100%;height:320px;object-fit:cover;display:block;filter:brightness(.7) saturate(.7);transition:filter .5s;">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,6,.9) 0%,transparent 50%);padding:20px;display:flex;flex-direction:column;justify-content:flex-end;">
             <div style="font-size:.8rem;color:rgba(245,240,232,.7);font-weight:300;">Design soigné, SEO optimisé, premières demandes dès la mise en ligne</div>
           </div>
@@ -1186,7 +1186,7 @@ footer {
     </div>
     <div class="gallery r">
       <div class="gc tall">
-        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80" alt="Site vitrine professionnel cabinet conseil Paris — réalisation Klïck" loading="lazy" width="700" height="560">
+        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=700&q=80" alt="Site vitrine professionnel cabinet conseil Paris — réalisation Klïck" loading="lazy" width="700" height="560">
         <div class="gc-info"><span class="gc-tag">Site vitrine</span><div class="gc-name">Cabinet conseil — Paris</div></div>
       </div>
       <div class="gc">
@@ -1775,11 +1775,15 @@ const bObs=new IntersectionObserver(en=>{
   en.forEach(e=>{
     if(e.isIntersecting){
       const ns=e.target.querySelectorAll('.band-num');
-      /* stats band: 7j / 900€ / 48h / 100% sans engagement */
-      if(ns[0]) ns[0].innerHTML='7<em>j</em>';
-      if(ns[1]) ns[1].innerHTML='900<em>€</em>';
-      if(ns[2]) ns[2].innerHTML='48<em>h</em>';
-      if(ns[3]) ns[3].innerHTML='100<em>%</em>';
+      const ls=e.target.querySelectorAll('.band-label');
+      if(ns[0]){ns[0].innerHTML='7<em>j</em>';}
+      if(ns[1]){ns[1].innerHTML='900<em>€</em>';}
+      if(ns[2]){ns[2].innerHTML='48<em>h</em>';}
+      if(ns[3]){ns[3].innerHTML='100<em>%</em>';}
+      if(ls[0]) ls[0].textContent='Délai de livraison';
+      if(ls[1]) ls[1].textContent='À partir de';
+      if(ls[2]) ls[2].textContent='Délai de réponse';
+      if(ls[3]) ls[3].textContent='Sans engagement';
       bObs.disconnect();
     }
   });
