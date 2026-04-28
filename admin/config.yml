@@ -18,15 +18,14 @@ collections:
         fields:
 
           # ── HERO ──
-          - label: "Hero — Titre"
+          - label: "Hero — Titre principal"
             name: hero_title
             widget: string
-            hint: "Titre principal affiché en grand sur la page d'accueil"
+            hint: "Titre affiché en grand sur la page d'accueil"
 
           - label: "Hero — Sous-titre"
             name: hero_subtitle
             widget: text
-            hint: "Texte descriptif sous le titre"
 
           - label: "Hero — Bouton principal"
             name: cta_text
@@ -40,14 +39,46 @@ collections:
             name: hero_image
             widget: image
             required: false
-            hint: "Image affichée dans le bloc hero (recommandé : 900x500px)"
 
-          - label: "Hero — KPI (ex: +3×)"
+          - label: "Hero — KPI (ex: Résultats)"
             name: hero_kpi
             widget: string
 
           - label: "Hero — Label du KPI"
             name: hero_kpi_label
+            widget: string
+
+          # ── MÉTRIQUES HERO ──
+          - label: "Métrique 1 — Valeur"
+            name: metric_1_val
+            widget: string
+
+          - label: "Métrique 1 — Label"
+            name: metric_1_label
+            widget: string
+
+          - label: "Métrique 2 — Valeur"
+            name: metric_2_val
+            widget: string
+
+          - label: "Métrique 2 — Label"
+            name: metric_2_label
+            widget: string
+
+          - label: "Métrique 3 — Valeur"
+            name: metric_3_val
+            widget: string
+
+          - label: "Métrique 3 — Label"
+            name: metric_3_label
+            widget: string
+
+          - label: "Métrique 4 — Valeur"
+            name: metric_4_val
+            widget: string
+
+          - label: "Métrique 4 — Label"
+            name: metric_4_label
             widget: string
 
           # ── SECTION PROBLÈME ──
@@ -68,34 +99,93 @@ collections:
             name: solution_text
             widget: text
 
-          # ── STATS ──
-          - label: "Stats"
+          # ── STATS BAND ──
+          - label: "Stats (bande de chiffres)"
             name: stats
             widget: list
             summary: "{{fields.value}} — {{fields.label}}"
             fields:
-              - { label: "Valeur (ex: 120+)", name: value, widget: string }
-              - { label: "Label (ex: Sites livrés)", name: label, widget: string }
+              - { label: "Valeur (ex: 7j)", name: value, widget: string }
+              - { label: "Label (ex: Délai de livraison)", name: label, widget: string }
 
-          # ── FORMULES ──
-          - label: "Formules — Titre section"
+          # ── TÉMOIGNAGES ──
+          - label: "Témoignages"
+            name: temoignages
+            widget: list
+            summary: "{{fields.nom}} — {{fields.role}}"
+            fields:
+              - { label: "Texte du témoignage", name: texte, widget: text }
+              - { label: "Prénom Nom", name: nom, widget: string }
+              - { label: "Rôle et ville", name: role, widget: string }
+
+          # ── PRICING ──
+          - label: "Pricing — Titre section"
             name: pricing_title
             widget: string
 
-          - label: "Formule Essentiel — Prix"
+          - label: "Prix Essentiel (€)"
             name: price_starter
             widget: string
 
-          - label: "Formule Business — Prix"
+          - label: "Prix Business (€)"
             name: price_business
             widget: string
 
-          - label: "Formule Premium — Prix"
+          - label: "Prix Premium (€)"
             name: price_premium
             widget: string
 
-          - label: "Maintenance — Prix"
+          - label: "Prix Maintenance (€/mois)"
             name: price_maintenance
+            widget: string
+
+          # ── PROCESSUS ──
+          - label: "Étape 1 — Titre"
+            name: process_1_titre
+            widget: string
+
+          - label: "Étape 1 — Description"
+            name: process_1_desc
+            widget: text
+
+          - label: "Étape 1 — Tag"
+            name: process_1_tag
+            widget: string
+
+          - label: "Étape 2 — Titre"
+            name: process_2_titre
+            widget: string
+
+          - label: "Étape 2 — Description"
+            name: process_2_desc
+            widget: text
+
+          - label: "Étape 2 — Tag"
+            name: process_2_tag
+            widget: string
+
+          - label: "Étape 3 — Titre"
+            name: process_3_titre
+            widget: string
+
+          - label: "Étape 3 — Description"
+            name: process_3_desc
+            widget: text
+
+          - label: "Étape 3 — Tag"
+            name: process_3_tag
+            widget: string
+
+          - label: "Étape 4 — Titre"
+            name: process_4_titre
+            widget: string
+
+          - label: "Étape 4 — Description"
+            name: process_4_desc
+            widget: text
+
+          - label: "Étape 4 — Tag"
+            name: process_4_tag
             widget: string
 
           # ── CONTACT ──
