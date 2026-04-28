@@ -18,86 +18,31 @@ collections:
         fields:
 
           # ── HERO ──
-          - label: "Hero — Titre principal"
-            name: hero_title
-            widget: string
-            hint: "Titre affiché en grand sur la page d'accueil"
+          - { label: "Hero — Titre principal", name: hero_title, widget: string }
+          - { label: "Hero — Sous-titre", name: hero_subtitle, widget: text }
+          - { label: "Hero — Bouton principal", name: cta_text, widget: string }
+          - { label: "Hero — Bouton secondaire", name: cta_secondary, widget: string }
+          - { label: "Hero — Image", name: hero_image, widget: image, required: false }
+          - { label: "Hero — KPI valeur", name: hero_kpi, widget: string }
+          - { label: "Hero — KPI label", name: hero_kpi_label, widget: string }
 
-          - label: "Hero — Sous-titre"
-            name: hero_subtitle
-            widget: text
+          # ── MÉTRIQUES ──
+          - { label: "Métrique 1 — Valeur", name: metric_1_val, widget: string }
+          - { label: "Métrique 1 — Label", name: metric_1_label, widget: string }
+          - { label: "Métrique 2 — Valeur", name: metric_2_val, widget: string }
+          - { label: "Métrique 2 — Label", name: metric_2_label, widget: string }
+          - { label: "Métrique 3 — Valeur", name: metric_3_val, widget: string }
+          - { label: "Métrique 3 — Label", name: metric_3_label, widget: string }
+          - { label: "Métrique 4 — Valeur", name: metric_4_val, widget: string }
+          - { label: "Métrique 4 — Label", name: metric_4_label, widget: string }
 
-          - label: "Hero — Bouton principal"
-            name: cta_text
-            widget: string
+          # ── PROBLÈME ──
+          - { label: "Problème — Titre", name: problem_title, widget: string }
+          - { label: "Problème — Sous-titre", name: problem_subtitle, widget: text }
 
-          - label: "Hero — Bouton secondaire"
-            name: cta_secondary
-            widget: string
-
-          - label: "Hero — Image principale"
-            name: hero_image
-            widget: image
-            required: false
-
-          - label: "Hero — KPI (ex: Résultats)"
-            name: hero_kpi
-            widget: string
-
-          - label: "Hero — Label du KPI"
-            name: hero_kpi_label
-            widget: string
-
-          # ── MÉTRIQUES HERO ──
-          - label: "Métrique 1 — Valeur"
-            name: metric_1_val
-            widget: string
-
-          - label: "Métrique 1 — Label"
-            name: metric_1_label
-            widget: string
-
-          - label: "Métrique 2 — Valeur"
-            name: metric_2_val
-            widget: string
-
-          - label: "Métrique 2 — Label"
-            name: metric_2_label
-            widget: string
-
-          - label: "Métrique 3 — Valeur"
-            name: metric_3_val
-            widget: string
-
-          - label: "Métrique 3 — Label"
-            name: metric_3_label
-            widget: string
-
-          - label: "Métrique 4 — Valeur"
-            name: metric_4_val
-            widget: string
-
-          - label: "Métrique 4 — Label"
-            name: metric_4_label
-            widget: string
-
-          # ── SECTION PROBLÈME ──
-          - label: "Problème — Titre"
-            name: problem_title
-            widget: string
-
-          - label: "Problème — Sous-titre"
-            name: problem_subtitle
-            widget: text
-
-          # ── SECTION SOLUTION ──
-          - label: "Solution — Titre"
-            name: solution_title
-            widget: string
-
-          - label: "Solution — Texte"
-            name: solution_text
-            widget: text
+          # ── SOLUTION ──
+          - { label: "Solution — Titre", name: solution_title, widget: string }
+          - { label: "Solution — Texte", name: solution_text, widget: text }
 
           # ── STATS BAND ──
           - label: "Stats (bande de chiffres)"
@@ -119,93 +64,46 @@ collections:
               - { label: "Rôle et ville", name: role, widget: string }
 
           # ── PRICING ──
-          - label: "Pricing — Titre section"
-            name: pricing_title
-            widget: string
-
-          - label: "Prix Essentiel (€)"
-            name: price_starter
-            widget: string
-
-          - label: "Prix Business (€)"
-            name: price_business
-            widget: string
-
-          - label: "Prix Premium (€)"
-            name: price_premium
-            widget: string
-
-          - label: "Prix Maintenance (€/mois)"
-            name: price_maintenance
-            widget: string
+          - { label: "Pricing — Titre section", name: pricing_title, widget: string }
+          - { label: "Prix Essentiel (€)", name: price_starter, widget: string }
+          - { label: "Prix Business (€)", name: price_business, widget: string }
+          - { label: "Prix Premium (€)", name: price_premium, widget: string }
+          - { label: "Prix Maintenance (€/mois)", name: price_maintenance, widget: string }
 
           # ── PROCESSUS ──
-          - label: "Étape 1 — Titre"
-            name: process_1_titre
-            widget: string
+          - { label: "Étape 1 — Titre", name: process_1_titre, widget: string }
+          - { label: "Étape 1 — Description", name: process_1_desc, widget: text }
+          - { label: "Étape 1 — Tag", name: process_1_tag, widget: string }
+          - { label: "Étape 2 — Titre", name: process_2_titre, widget: string }
+          - { label: "Étape 2 — Description", name: process_2_desc, widget: text }
+          - { label: "Étape 2 — Tag", name: process_2_tag, widget: string }
+          - { label: "Étape 3 — Titre", name: process_3_titre, widget: string }
+          - { label: "Étape 3 — Description", name: process_3_desc, widget: text }
+          - { label: "Étape 3 — Tag", name: process_3_tag, widget: string }
+          - { label: "Étape 4 — Titre", name: process_4_titre, widget: string }
+          - { label: "Étape 4 — Description", name: process_4_desc, widget: text }
+          - { label: "Étape 4 — Tag", name: process_4_tag, widget: string }
 
-          - label: "Étape 1 — Description"
-            name: process_1_desc
-            widget: text
+          # ── FAQ ──
+          - label: "FAQ — Questions / Réponses"
+            name: faq
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - { label: "Question", name: question, widget: string }
+              - { label: "Réponse", name: reponse, widget: text }
 
-          - label: "Étape 1 — Tag"
-            name: process_1_tag
-            widget: string
-
-          - label: "Étape 2 — Titre"
-            name: process_2_titre
-            widget: string
-
-          - label: "Étape 2 — Description"
-            name: process_2_desc
-            widget: text
-
-          - label: "Étape 2 — Tag"
-            name: process_2_tag
-            widget: string
-
-          - label: "Étape 3 — Titre"
-            name: process_3_titre
-            widget: string
-
-          - label: "Étape 3 — Description"
-            name: process_3_desc
-            widget: text
-
-          - label: "Étape 3 — Tag"
-            name: process_3_tag
-            widget: string
-
-          - label: "Étape 4 — Titre"
-            name: process_4_titre
-            widget: string
-
-          - label: "Étape 4 — Description"
-            name: process_4_desc
-            widget: text
-
-          - label: "Étape 4 — Tag"
-            name: process_4_tag
-            widget: string
+          # ── SEO ──
+          - { label: "SEO — Titre 1", name: seo_titre_1, widget: string }
+          - { label: "SEO — Texte 1", name: seo_texte_1, widget: text }
+          - { label: "SEO — Titre 2", name: seo_titre_2, widget: string }
+          - { label: "SEO — Texte 2", name: seo_texte_2, widget: text }
 
           # ── CONTACT ──
-          - label: "Contact — Titre"
-            name: contact_title
-            widget: string
-
-          - label: "Contact — Sous-titre"
-            name: contact_subtitle
-            widget: string
-
-          - label: "Contact — Email"
-            name: contact_email
-            widget: string
+          - { label: "Contact — Titre", name: contact_title, widget: string }
+          - { label: "Contact — Sous-titre", name: contact_subtitle, widget: string }
+          - { label: "Contact — Email", name: contact_email, widget: string }
 
           # ── FOOTER ──
-          - label: "Footer — Tagline"
-            name: footer_tagline
-            widget: string
-
-          - label: "Footer — Copyright"
-            name: footer_copy
-            widget: string
+          - { label: "Footer — Tagline", name: footer_tagline, widget: string }
+          - { label: "Footer — Copyright", name: footer_copy, widget: string }
