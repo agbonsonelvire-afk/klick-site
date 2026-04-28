@@ -1,5 +1,4 @@
 {
-  "// HERO": "",
   "hero_title": "Des sites web conçus pour générer des clients, pas simplement exister",
   "hero_subtitle": "Nous concevons des sites web modernes, rapides et stratégiquement pensés pour accompagner la croissance des entreprises.",
   "cta_text": "Obtenir un audit offert",
@@ -8,7 +7,6 @@
   "hero_kpi": "Résultats",
   "hero_kpi_label": "concrets pour nos clients",
 
-  "// MÉTRIQUES HERO": "",
   "metric_1_val": "7j",
   "metric_1_label": "Délai de livraison",
   "metric_2_val": "900€",
@@ -18,15 +16,12 @@
   "metric_4_val": "48h",
   "metric_4_label": "Délai de réponse",
 
-  "// SECTION PROBLÈME": "",
   "problem_title": "Votre site reflète-t-il réellement la valeur de votre entreprise ?",
   "problem_subtitle": "Un site web inefficace peut nuire à votre image et limiter votre développement.",
 
-  "// SECTION SOLUTION": "",
   "solution_title": "Une approche orientée performance.",
   "solution_text": "Nous concevons des sites web qui allient design, performance et stratégie. Chaque projet est pensé pour répondre à un objectif concret : générer des résultats mesurables.",
 
-  "// STATS BAND": "",
   "stats": [
     { "value": "7j",   "label": "Délai de livraison" },
     { "value": "900€", "label": "À partir de" },
@@ -34,7 +29,6 @@
     { "value": "100%", "label": "Sans engagement" }
   ],
 
-  "// TÉMOIGNAGES": "",
   "temoignages": [
     {
       "texte": "Avant, mon site ne me rapportait rien. En deux semaines, j'ai reçu mes premières demandes de contact.",
@@ -53,14 +47,12 @@
     }
   ],
 
-  "// PRICING": "",
   "pricing_title": "Des solutions adaptées à vos enjeux",
   "price_starter":     "900",
   "price_business":    "1 900",
   "price_premium":     "2 900",
   "price_maintenance": "49",
 
-  "// PROCESSUS": "",
   "process_1_titre": "Analyse de vos besoins",
   "process_1_desc":  "On analyse votre activité, votre marché et vos objectifs. On identifie ce qui manque et ce qui peut être amélioré dans votre présence en ligne.",
   "process_1_tag":   "Offert",
@@ -74,12 +66,42 @@
   "process_4_desc":  "Votre site est mis en ligne, testé et optimisé. Formation incluse pour vous rendre autonome dès le premier jour.",
   "process_4_tag":   "7 jours",
 
-  "// CONTACT": "",
+  "faq": [
+    {
+      "question": "Quel est le délai de livraison ?",
+      "reponse": "7 jours ouvrables pour la formule Essentiel, 10 jours pour Business et 14 jours pour Premium. Le délai commence à la réception de vos contenus (textes, photos, logo)."
+    },
+    {
+      "question": "Faites-vous aussi les boutiques en ligne ?",
+      "reponse": "Oui. Nous créons des boutiques e-commerce complètes avec catalogue, paiement sécurisé (CB, PayPal, virement), gestion des commandes et interface admin intuitive. Tarif sur devis."
+    },
+    {
+      "question": "Travaillez-vous avec les professionnels de santé ?",
+      "reponse": "Oui, absolument. Médecins, dentistes, kinésithérapeutes, psychologues, ostéopathes… Nous réalisons des sites adaptés aux professionnels de santé qui s'installent ou souhaitent renforcer leur présence en ligne."
+    },
+    {
+      "question": "Puis-je modifier mon site après livraison ?",
+      "reponse": "Oui. Un CMS (interface d'administration) est inclus dans toutes les formules. Vous modifiez vos textes et images sans aucune connaissance technique."
+    },
+    {
+      "question": "Le paiement en plusieurs fois est-il possible ?",
+      "reponse": "Oui. Toutes nos formules sont disponibles en paiement 3 fois sans frais. 30% à la commande, le solde en 2 versements égaux à la livraison et 30 jours après."
+    },
+    {
+      "question": "Que se passe-t-il si le résultat ne me convient pas ?",
+      "reponse": "2 allers-retours de révision sont inclus dans toutes les formules. Nous travaillons jusqu'à ce que vous soyez entièrement satisfait(e)."
+    }
+  ],
+
+  "seo_titre_1": "Agence web à Paris",
+  "seo_texte_1": "Klïck est une agence web basée à Paris, spécialisée dans la création de sites vitrines pour artisans, commerçants et PME. Nous concevons des sites modernes, rapides et optimisés pour le référencement naturel (SEO).",
+  "seo_titre_2": "Création de site internet professionnel",
+  "seo_texte_2": "Chaque site est pensé pour convertir vos visiteurs en clients, avec un design premium et une structure optimisée pour Google.",
+
   "contact_title":    "Demandez votre devis gratuit.",
   "contact_subtitle": "Réponse sous 48h · Sans engagement · 2 minutes à remplir",
   "contact_email":    "contact@klick-agence.fr",
 
-  "// FOOTER": "",
   "footer_tagline": "Des sites web d'exception pour les entreprises qui refusent la médiocrité digitale.",
   "footer_copy":    "© 2025 Klïck — Tous droits réservés"
 }
