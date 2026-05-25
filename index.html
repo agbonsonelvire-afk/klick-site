@@ -633,7 +633,18 @@ footer {
 .r.on { opacity:1; transform:translateY(0); }
 
 /* ── MOBILE ── */
+.expertise-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:2px;
+  background:var(--wire);
+  border:1px solid var(--wire);
+}
 @media(max-width:960px){
+  .expertise-grid {
+    grid-template-columns:1fr !important;
+  }
+}
   body { cursor:auto; }
   #cur,#cur2 { display:none; }
 
@@ -650,7 +661,7 @@ footer {
   .h1-word { font-size:clamp(2.6rem,9vw,4.5rem) !important; }
   .hero-sub { font-size:.9rem; }
   .hero-actions { flex-direction:column; align-items:flex-start; gap:14px; }
-  .btn-gold { width:auto !important; text-align:center; justify-content:center; flex-shrink:1 !important; padding:12px 20px; font-size:.68rem; letter-spacing:.1em; white-space:nowrap; }
+  .btn-gold { text-align:center; justify-content:center; }
   .scroll-hint { display:none; }
   .hero-img { height:200px; object-fit:cover; }
   .metric-row { grid-template-columns:1fr 1fr; gap:8px; }
@@ -688,16 +699,8 @@ footer {
   }
   div[style*="padding:56px 60px"] .btn-gold {
     width:auto;
-    flex-shrink:1 !important;
-    white-space:nowrap;
   }
-  /* Fix all inline flex-shrink:0 on buttons */
-  a[style*="flex-shrink:0"] {
-    flex-shrink:1 !important;
-    white-space:nowrap;
-    padding:12px 18px !important;
-    font-size:.68rem !important;
-  }
+
 
   /* AVANT / APRÈS section */
   section[style*="padding:100px 60px"] {
@@ -1050,7 +1053,7 @@ footer {
       <div class="eyebrow r" style="justify-content:center;"><span style="display:none"></span>Notre expertise</div>
       <h2 class="sec-title r">Ce que nous <em>maîtrisons.</em></h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--wire);border:1px solid var(--wire);" class="r">
+    <div class="expertise-grid r">
       <div style="background:var(--deep);padding:40px 36px;">
         <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:400;margin-bottom:24px;color:var(--ivory);">Création de sites web</div>
         <div style="display:flex;flex-direction:column;gap:12px;">
