@@ -368,7 +368,7 @@ nav.s { background:rgba(5,7,6,0.94); backdrop-filter:blur(24px); border-color:va
 .ticker { border-top:1px solid var(--wire); border-bottom:1px solid var(--wire); padding:13px 0; overflow:hidden; background:var(--layer); }
 .ticker-track { display:flex; gap:60px; white-space:nowrap; animation:tick 30s linear infinite; }
 @keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-.tick-item { font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--smoke); display:flex; align-items:center; gap:24px; flex-shrink:0; }
+.tick-item { font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--smoke); display:flex; align-items:center; gap:24px; flex-shrink:0; white-space:nowrap; }
 .tick-item.lit { color:rgba(201,168,76,.5); }
 .tick-sep { width:1px; height:12px; background:var(--wire); }
 
@@ -650,7 +650,7 @@ footer {
   .h1-word { font-size:clamp(2.6rem,9vw,4.5rem) !important; }
   .hero-sub { font-size:.9rem; }
   .hero-actions { flex-direction:column; align-items:flex-start; gap:14px; }
-  .btn-gold { width:100%; text-align:center; justify-content:center; }
+  .btn-gold { width:auto !important; text-align:center; justify-content:center; flex-shrink:1 !important; padding:12px 20px; font-size:.68rem; letter-spacing:.1em; white-space:nowrap; }
   .scroll-hint { display:none; }
   .hero-img { height:200px; object-fit:cover; }
   .metric-row { grid-template-columns:1fr 1fr; gap:8px; }
@@ -688,6 +688,15 @@ footer {
   }
   div[style*="padding:56px 60px"] .btn-gold {
     width:auto;
+    flex-shrink:1 !important;
+    white-space:nowrap;
+  }
+  /* Fix all inline flex-shrink:0 on buttons */
+  a[style*="flex-shrink:0"] {
+    flex-shrink:1 !important;
+    white-space:nowrap;
+    padding:12px 18px !important;
+    font-size:.68rem !important;
   }
 
   /* AVANT / APRÈS section */
@@ -929,7 +938,7 @@ footer {
 <div class="ticker">
   <div class="ticker-track">
     <div class="tick-item">Site Vitrine<span class="tick-sep"></span></div>
-    <div class="tick-item lit">Boutique E-commerce<span class="tick-sep"></span></div>
+    <div class="tick-item lit">E-commerce<span class="tick-sep"></span></div>
     <div class="tick-item">Refonte Web<span class="tick-sep"></span></div>
     <div class="tick-item lit">SEO Naturel<span class="tick-sep"></span></div>
     <div class="tick-item">Design Responsive<span class="tick-sep"></span></div>
@@ -937,7 +946,7 @@ footer {
     <div class="tick-item">Maintenance<span class="tick-sep"></span></div>
     <div class="tick-item lit">Conversion<span class="tick-sep"></span></div>
     <div class="tick-item">Site Vitrine<span class="tick-sep"></span></div>
-    <div class="tick-item lit">Boutique E-commerce<span class="tick-sep"></span></div>
+    <div class="tick-item lit">E-commerce<span class="tick-sep"></span></div>
     <div class="tick-item">Refonte Web<span class="tick-sep"></span></div>
     <div class="tick-item lit">SEO Naturel<span class="tick-sep"></span></div>
     <div class="tick-item">Design Responsive<span class="tick-sep"></span></div>
@@ -1060,7 +1069,7 @@ footer {
         </div>
       </div>
       <div style="background:var(--deep);padding:40px 36px;">
-        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:400;margin-bottom:24px;color:var(--ivory);">Boutique E-commerce</div>
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:400;margin-bottom:24px;color:var(--ivory);">E-commerce</div>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <div style="display:flex;align-items:center;gap:12px;font-size:.82rem;color:rgba(245,240,232,.6);font-weight:300;">
             <span style="width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;display:inline-block;"></span>Vente en ligne 24h/24 — catalogue produits
