@@ -40,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link rel="dns-prefetch" content="https://formspree.io">
+<link rel="dns-prefetch" href="https://formspree.io">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <!-- ── SCHEMA.ORG JSON-LD ── -->
@@ -811,7 +811,8 @@ footer {
   gtag('config', 'G-CZMWTXNGL0');
 </script>
 <!-- ── CALENDLY POPUP WIDGET ── -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"></noscript>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <style>
   .calendly-popup-content { border-radius:0 !important; }
@@ -1200,6 +1201,7 @@ footer {
   </div>
   <a href="#contact" class="btn-gold" style="flex-shrink:0;"><span>Demander un devis</span></a>
 </div>
+<section id="work" class="gal-bg">
   <div class="wrap">
     <div class="gal-head">
       <div class="r"><div class="eyebrow">Réalisations</div><div class="sec-title">Nos <em>projets.</em></div></div>
@@ -1500,39 +1502,39 @@ footer {
       </div>
       <div class="fq-list r">
         <div class="fq open">
-          <div class="fq-q" onclick="faq(this)">Combien de temps pour créer mon site ?<span class="fq-icon">+</span></div>
+          <button class="fq-q" onclick="faq(this)" aria-expanded="false">Combien de temps pour créer mon site ?<span class="fq-icon">+</span></button>
           <div class="fq-a">Entre 7 et 14 jours ouvrés selon la formule choisie. Notre engagement : rapidité et qualité, sans compromis.</div>
         </div>
         <div class="fq">
-          <div class="fq-q" onclick="faq(this)">Je n'ai aucun contenu, vous pouvez m'aider ?<span class="fq-icon">+</span></div>
+          <button class="fq-q" onclick="faq(this)" aria-expanded="false">Je n'ai aucun contenu, vous pouvez m'aider ?<span class="fq-icon">+</span></button>
           <div class="fq-a">Absolument. On vous accompagne pour structurer vos textes et on vous conseille sur les visuels. On a aussi accès aux meilleures banques d'images professionnelles.</div>
         </div>
         <div class="fq">
-          <div class="fq-q" onclick="faq(this)">Puis-je modifier mon site moi-même ?<span class="fq-icon">+</span></div>
+          <button class="fq-q" onclick="faq(this)" aria-expanded="false">Puis-je modifier mon site moi-même ?<span class="fq-icon">+</span></button>
           <div class="fq-a">Oui. On utilise des outils no-code intuitifs, et une formation de 30 minutes est incluse dans toutes les formules pour vous rendre pleinement autonome.</div>
         </div>
         <div class="fq">
-          <div class="fq-q" onclick="faq(this)">Comment se déroule le premier contact ?<span class="fq-icon">+</span></div>
+          <button class="fq-q" onclick="faq(this)" aria-expanded="false">Comment se déroule le premier contact ?<span class="fq-icon">+</span></button>
           <div class="fq-a">Remplissez le formulaire de devis en 2 minutes. On vous répond sous 48h pour convenir d'un appel de 30 minutes — on définit ensemble votre projet, vos objectifs et la formule la plus adaptée.</div>
         </div>
         <div class="fq">
-          <div class="fq-q" onclick="faq(this)">Proposez-vous la maintenance après livraison ?<span class="fq-icon">+</span></div>
+          <button class="fq-q" onclick="faq(this)" aria-expanded="false">Proposez-vous la maintenance après livraison ?<span class="fq-icon">+</span></button>
           <div class="fq-a">Oui, à partir de 49€/mois : mises à jour, sauvegardes quotidiennes, suivi des performances et support prioritaire sous 4h.</div>
         </div>
         <div class="fq">
-          <div class="fq-q" onclick="faq(this)">Le paiement en plusieurs fois est-il possible ?<span class="fq-icon">+</span></div>
+          <button class="fq-q" onclick="faq(this)" aria-expanded="false">Le paiement en plusieurs fois est-il possible ?<span class="fq-icon">+</span></button>
           <div class="fq-a">Oui. Toutes nos formules sont disponibles en paiement 3 fois sans frais. Un acompte de 30% est demandé au démarrage, le solde est réglé en 2 versements égaux à la livraison et 30 jours après. Aucun frais supplémentaire.</div>
         </div>
         <div class="fq">
-          <div class="fq-q" onclick="faq(this)">Faites-vous aussi les boutiques en ligne ?<span class="fq-icon">+</span></div>
+          <button class="fq-q" onclick="faq(this)" aria-expanded="false">Faites-vous aussi les boutiques en ligne ?<span class="fq-icon">+</span></button>
           <div class="fq-a">Oui. Nous créons des boutiques e-commerce complètes : catalogue produits, paiement sécurisé (CB, PayPal, virement), gestion des commandes et interface admin intuitive. Tarif sur devis selon la complexité du projet.</div>
         </div>
         <div class="fq">
-          <div class="fq-q" onclick="faq(this)">Travaillez-vous avec les professionnels de santé ?<span class="fq-icon">+</span></div>
+          <button class="fq-q" onclick="faq(this)" aria-expanded="false">Travaillez-vous avec les professionnels de santé ?<span class="fq-icon">+</span></button>
           <div class="fq-a">Oui, absolument. Médecins, dentistes, kinésithérapeutes, psychologues, ostéopathes… Nous réalisons des sites adaptés aux professionnels de santé qui s'installent ou souhaitent renforcer leur présence en ligne. Design rassurant, présentation des services et formulaire de prise de contact.</div>
         </div>
         <div class="fq">
-          <div class="fq-q" onclick="faq(this)">Pour quels types d'entreprises travaillez-vous ?<span class="fq-icon">+</span></div>
+          <button class="fq-q" onclick="faq(this)" aria-expanded="false">Pour quels types d'entreprises travaillez-vous ?<span class="fq-icon">+</span></button>
           <div class="fq-a">Artisans, commerçants, indépendants, TPE, PME et professionnels de santé. Toute entreprise qui veut un site à la hauteur de son activité — vitrine, e-commerce ou cabinet médical.</div>
         </div>
       </div>
@@ -1591,7 +1593,7 @@ footer {
       <h4>Contact</h4>
       <a href="#contact">Devis gratuit</a>
       <a href="mailto:contact@klick-agence.fr">Email</a>
-      <a href="https://linkedin.com/company/klick-agence" target="_blank">LinkedIn</a>
+      <a href="https://linkedin.com/company/klick-agence" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
   <div class="foot-bottom">
@@ -1843,7 +1845,7 @@ if(tagEl){
 }
 </script>
 <!-- ── NETLIFY IDENTITY ── -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 <script>
 if(window.netlifyIdentity){
   window.netlifyIdentity.on('init',user=>{
@@ -1863,8 +1865,14 @@ fetch('/content/home.json')
     /* ── HERO ── */
     const heroTitle = document.getElementById('hero-title');
     if(heroTitle && d.hero_title){
-      heroTitle.innerHTML =
-        '<span class="h1-line"><span class="h1-word">' + d.hero_title + '</span></span>';
+      const line = document.createElement('span');
+      line.className = 'h1-line';
+      const word = document.createElement('span');
+      word.className = 'h1-word';
+      word.textContent = d.hero_title;
+      line.appendChild(word);
+      heroTitle.innerHTML = '';
+      heroTitle.appendChild(line);
     }
     const heroSub = document.getElementById('hero-subtitle');
     if(heroSub && d.hero_subtitle) heroSub.textContent = d.hero_subtitle;
