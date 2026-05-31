@@ -1,0 +1,7 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/ressources"
+  to = "/ressources.html"
+  status = 200
