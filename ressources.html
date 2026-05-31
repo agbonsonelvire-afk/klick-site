@@ -331,7 +331,7 @@ footer { background:var(--void); border-top:1px solid var(--wire); padding:64px 
               onfocus="this.style.borderColor='rgba(201,168,76,.5)'" onblur="this.style.borderColor='rgba(201,168,76,0.18)'">
           </div>
           <button id="leadBtn" class="btn-lead" onclick="submitLead()"><span>Recevoir le kit gratuit →</span></button>
-          <p class="form-note">Pas de spam · Désabonnement en 1 clic</p>
+          <p class="form-note">Pas de spam</p>
         </div>
         <div id="leadSuccess" class="form-success">
           <span class="form-success-glyph">✦</span>
@@ -562,37 +562,30 @@ async function submitLead(){
   const btn = document.getElementById('leadBtn');
 
   if(!fn || !em || !em.includes('@')) {
-    btn.textContent = 'Remplissez tous les champs';
-    setTimeout(() => btn.textContent = 'Recevoir le kit gratuit →', 2000);
+    btn.querySelector('span').textContent = 'Remplissez tous les champs';
+    setTimeout(() => btn.querySelector('span').textContent = 'Recevoir le kit gratuit →', 2000);
     return;
   }
 
-  btn.textContent = 'Envoi en cours...';
+  btn.querySelector('span').textContent = 'Envoi en cours...';
   btn.disabled = true;
 
   try {
-    const res = await fetch('/.netlify/functions/subscribe', {
+    const res = await fetch('https://hook.eu1.make.com/v4va97m4wimo0kru3kvcwya4beyicvwu', {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: em, prenom: fn })
     });
 
-    if(res.ok || res.status === 204) {
+    if(res.ok) {
       document.getElementById('leadForm').style.display = 'none';
       document.getElementById('leadSuccess').style.display = 'block';
     } else {
-      const data = await res.json();
-      if(data.code === 'duplicate_parameter') {
-        // Contact déjà inscrit — on affiche quand même le succès
-        document.getElementById('leadForm').style.display = 'none';
-        document.getElementById('leadSuccess').style.display = 'block';
-      } else {
-        btn.textContent = 'Erreur, réessayez';
+        btn.querySelector('span').textContent = 'Erreur, réessayez';
         btn.disabled = false;
-      }
     }
   } catch(e) {
-    btn.textContent = 'Erreur, réessayez';
+    btn.querySelector('span').textContent = 'Erreur, réessayez';
     btn.disabled = false;
   }
 }
