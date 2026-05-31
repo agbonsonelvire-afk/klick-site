@@ -543,7 +543,7 @@ async function submitLead(){
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://hook.eu1.make.com/v4va97m4wimo0kru3kvcwya4beyicvwu', {
+    const res = await fetch('https://klick-agence.app.n8n.cloud/webhook-test/klick-lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: em, prenom: fn })
