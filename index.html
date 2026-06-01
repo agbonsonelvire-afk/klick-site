@@ -1920,6 +1920,14 @@ fetch('/content/home.json')
     const solutionText = document.getElementById('solution-text');
     if(solutionText && d.solution_text) solutionText.textContent = d.solution_text;
 
+    /* ── MÉTRIQUES ── */
+    ['1','2','3','4'].forEach(n => {
+      const v = document.getElementById('metric-' + n + '-val');
+      const l = document.getElementById('metric-' + n + '-label');
+      if(v && d['metric_' + n + '_val']) v.textContent = d['metric_' + n + '_val'];
+      if(l && d['metric_' + n + '_label']) l.textContent = d['metric_' + n + '_label'];
+    });
+
     /* ── STATS ── */
     if(d.stats && Array.isArray(d.stats)){
       d.stats.forEach((stat, i) => {
@@ -1929,6 +1937,52 @@ fetch('/content/home.json')
         if(lbl) lbl.textContent = stat.label;
       });
     }
+
+    /* ── PRICING ── */
+    const pricingTitle = document.getElementById('pricing-title');
+    if(pricingTitle && d.pricing_title) pricingTitle.textContent = d.pricing_title;
+    if(d.price_starter){ const el = document.getElementById('price-starter'); if(el) el.textContent = d.price_starter; }
+    if(d.price_business){ const el = document.getElementById('price-business'); if(el) el.textContent = d.price_business; }
+    if(d.price_premium){ const el = document.getElementById('price-premium'); if(el) el.textContent = d.price_premium; }
+    if(d.price_maintenance){ const el = document.getElementById('price-maintenance'); if(el) el.textContent = d.price_maintenance; }
+
+    /* ── PROCESSUS ── */
+    ['1','2','3','4'].forEach(n => {
+      const t = document.getElementById('process-' + n + '-titre');
+      const desc = document.getElementById('process-' + n + '-desc');
+      const tag = document.getElementById('process-' + n + '-tag');
+      if(t && d['process_' + n + '_titre']) t.textContent = d['process_' + n + '_titre'];
+      if(desc && d['process_' + n + '_desc']) desc.textContent = d['process_' + n + '_desc'];
+      if(tag && d['process_' + n + '_tag']) tag.textContent = d['process_' + n + '_tag'];
+    });
+
+    /* ── TÉMOIGNAGES ── */
+    if(d.temoignages && Array.isArray(d.temoignages)){
+      d.temoignages.forEach((t, i) => {
+        const text = document.getElementById('testi-text-' + i);
+        const nom = document.getElementById('testi-nom-' + i);
+        const role = document.getElementById('testi-role-' + i);
+        if(text) text.textContent = t.texte;
+        if(nom) nom.textContent = t.nom;
+        if(role) role.textContent = t.role;
+      });
+    }
+
+    /* ── FAQ ── */
+    if(d.faq && Array.isArray(d.faq)){
+      d.faq.forEach((item, i) => {
+        const q = document.getElementById('faq-q-' + i);
+        const a = document.getElementById('faq-a-' + i);
+        if(q) q.textContent = item.question;
+        if(a) a.textContent = item.reponse;
+      });
+    }
+
+    /* ── SEO ── */
+    if(d.seo_titre_1){ const el = document.getElementById('seo-titre-1'); if(el) el.textContent = d.seo_titre_1; }
+    if(d.seo_texte_1){ const el = document.getElementById('seo-texte-1'); if(el) el.textContent = d.seo_texte_1; }
+    if(d.seo_titre_2){ const el = document.getElementById('seo-titre-2'); if(el) el.textContent = d.seo_titre_2; }
+    if(d.seo_texte_2){ const el = document.getElementById('seo-texte-2'); if(el) el.textContent = d.seo_texte_2; }
 
     /* ── CONTACT ── */
     const contactTitle = document.getElementById('contact-title');

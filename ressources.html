@@ -543,10 +543,15 @@ async function submitLead(){
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://klick-agence.app.n8n.cloud/webhook/klick-lead', {
+    const formData = new FormData();
+    formData.append('email', em);
+    formData.append('prenom', fn);
+    formData.append('_subject', 'Nouveau téléchargement kit gratuit — ' + fn);
+
+    const res = await fetch('https://formspree.io/f/xpqkrvbl', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: em, prenom: fn })
+      body: formData,
+      headers: { 'Accept': 'application/json' }
     });
 
     if(res.ok) {
@@ -561,6 +566,68 @@ async function submitLead(){
     btn.disabled = false;
   }
 }
+</script>
+<!-- ── CMS CONTENT LOADER ── -->
+<script>
+fetch('/content/ressources.json')
+  .then(res => { if(!res.ok) throw new Error('JSON introuvable'); return res.json(); })
+  .then(d => {
+
+    /* ── HERO ── */
+    const heroTitle = document.getElementById('res-hero-title');
+    if(heroTitle && d.hero_title) heroTitle.textContent = d.hero_title;
+    const heroSub = document.getElementById('res-hero-subtitle');
+    if(heroSub && d.hero_subtitle) heroSub.textContent = d.hero_subtitle;
+
+    /* ── LEAD MAGNET ── */
+    const leadBadge = document.getElementById('lead-badge');
+    if(leadBadge && d.lead_badge) leadBadge.textContent = d.lead_badge;
+    const leadTitle = document.getElementById('lead-title');
+    if(leadTitle && d.lead_title) leadTitle.textContent = d.lead_title;
+    const leadDesc = document.getElementById('lead-desc');
+    if(leadDesc && d.lead_desc) leadDesc.textContent = d.lead_desc;
+    const leadPdf = document.getElementById('lead-pdf-url');
+    if(leadPdf && d.lead_pdf_url) leadPdf.href = d.lead_pdf_url;
+    if(d.lead_items && Array.isArray(d.lead_items)){
+      const list = document.getElementById('lead-items');
+      if(list){
+        list.innerHTML = '';
+        d.lead_items.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          list.appendChild(li);
+        });
+      }
+    }
+
+    /* ── KIT PAYANT ── */
+    const kitTitle = document.getElementById('kit-title');
+    if(kitTitle && d.kit_title) kitTitle.textContent = d.kit_title;
+    const kitPrice = document.getElementById('kit-price');
+    if(kitPrice && d.kit_price) kitPrice.textContent = d.kit_price + '€';
+    const kitDesc = document.getElementById('kit-desc');
+    if(kitDesc && d.kit_desc) kitDesc.textContent = d.kit_desc;
+    const kitBuy = document.getElementById('kit-buy-url');
+    if(kitBuy && d.kit_buy_url) kitBuy.href = d.kit_buy_url;
+    if(d.kit_items && Array.isArray(d.kit_items)){
+      const list = document.getElementById('kit-items');
+      if(list){
+        list.innerHTML = '';
+        d.kit_items.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          list.appendChild(li);
+        });
+      }
+    }
+
+    /* ── SEO ── */
+    if(d.seo_title){ document.title = d.seo_title; }
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if(metaDesc && d.seo_desc) metaDesc.content = d.seo_desc;
+
+  })
+  .catch(err => console.info('CMS Ressources:', err.message));
 </script>
 </body>
 </html>
