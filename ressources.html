@@ -543,10 +543,15 @@ async function submitLead(){
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://hooks.zapier.com/hooks/catch/27803558/4b5k0ne/', {
+    const formData = new FormData();
+    formData.append('email', em);
+    formData.append('prenom', fn);
+    formData.append('_subject', 'Nouveau lead kit gratuit — ' + fn);
+
+    const res = await fetch('https://formspree.io/f/xpqkrvbl', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: em, prenom: fn })
+      body: formData,
+      headers: { 'Accept': 'application/json' }
     });
 
     if(res.ok) {
