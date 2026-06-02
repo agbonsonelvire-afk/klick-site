@@ -5,3 +5,9 @@
   from = "/ressources"
   to = "/ressources.html"
   status = 200
+
+[[headers]]
+  for = "/assets/*.pdf"
+  [headers.values]
+    Content-Type = "application/pdf"
+    Content-Disposition = "inline"
