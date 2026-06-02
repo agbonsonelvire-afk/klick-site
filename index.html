@@ -462,9 +462,10 @@ nav.s { background:rgba(5,7,6,0.94); backdrop-filter:blur(24px); border-color:va
 .pricing-bg { background:var(--layer); }
 .plans {
   display:grid; grid-template-columns:repeat(3,1fr);
-  gap:0; margin-top:56px;
+  gap:0;
   border:1px solid var(--wire);
-  max-width:1100px; margin-left:auto; margin-right:auto;
+  max-width:1100px;
+  margin:56px auto 0;
 }
 .plan {
   background:var(--deep); padding:40px 32px;
@@ -482,7 +483,7 @@ nav.s { background:rgba(5,7,6,0.94); backdrop-filter:blur(24px); border-color:va
   font-family:'Cormorant Garamond',Georgia,serif;
   font-size:clamp(2.8rem,3.5vw,3.5rem); font-weight:300;
   line-height:1; letter-spacing:-.01em; margin-bottom:6px;
-  white-space:nowrap;
+  white-space:nowrap; text-align:center;
 }
 .plan-price sup { font-size:.9rem; vertical-align:super; color:var(--gold); margin-left:3px; }
 .plan-note { font-size:.72rem; color:var(--smoke); margin-bottom:24px; font-weight:300; line-height:1.5; }
@@ -633,6 +634,25 @@ footer {
 .r { opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease; }
 .r.on { opacity:1; transform:translateY(0); }
 
+/* ── RESSOURCES ── */
+.res-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--wire); }
+.res-card { background:var(--deep); padding:48px 40px; box-sizing:border-box; }
+.res-card-alt { background:var(--card); position:relative; }
+.res-badge { display:inline-block; border:1px solid rgba(201,168,76,.35); color:var(--gold); font-size:.6rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; padding:6px 16px; margin-bottom:28px; }
+.res-price { position:absolute; top:20px; right:20px; background:var(--gold); color:var(--void); font-family:'Cormorant Garamond',Georgia,serif; font-size:1.8rem; font-weight:600; padding:8px 16px; line-height:1; }
+.res-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:300; color:var(--ivory); line-height:1.15; margin-bottom:16px; }
+.res-title em { color:var(--gold); font-style:italic; }
+.res-desc { font-size:.85rem; color:var(--smoke); line-height:1.8; margin-bottom:28px; }
+.res-list { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:36px; }
+.res-list li { display:flex; align-items:flex-start; gap:10px; font-size:.82rem; color:var(--smoke); line-height:1.6; }
+.res-list li span { color:var(--gold); font-size:.55rem; flex-shrink:0; margin-top:4px; }
+.res-form-row { display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--wire); margin-bottom:2px; }
+.res-input { background:transparent; border:none; border-right:1px solid var(--wire); color:var(--ivory); padding:12px 16px; font-family:'DM Sans',sans-serif; font-size:.82rem; outline:none; width:100%; min-width:0; box-sizing:border-box; }
+.res-input:last-child { border-right:none; }
+.res-input::placeholder { color:var(--smoke); }
+.res-btn { display:block; width:100%; text-align:center; text-decoration:none; }
+.res-note { font-size:.68rem; color:var(--smoke); text-align:center; margin-top:10px; }
+
 /* ── MOBILE ── */
 .expertise-grid {
   display:grid;
@@ -643,6 +663,12 @@ footer {
   width:100%;
 }
 @media(max-width:960px){
+  .res-grid { grid-template-columns:1fr !important; }
+  .res-card { padding:32px 20px !important; }
+  .res-price { position:static !important; display:inline-block; margin-bottom:16px; }
+  .res-form-row { grid-template-columns:1fr !important; }
+  .res-input { border-right:none !important; border-bottom:1px solid var(--wire); }
+  .res-input:last-child { border-bottom:none; }
   .expertise-grid {
     grid-template-columns:1fr !important;
   }
@@ -653,6 +679,39 @@ footer {
   nav { padding:0 20px; height:56px; }
   .nav-center,.nav-line { display:none; }
   .nav-cta { font-size:.65rem; padding:8px 14px; }
+
+  .nav-hamburger {
+    display:flex !important;
+    flex-direction:column; gap:5px;
+    cursor:pointer; padding:6px; z-index:200;
+  }
+  .nav-hamburger span {
+    display:block; width:22px; height:1.5px;
+    background:var(--ivory); transition:all .3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .nav-hamburger.open span:nth-child(2) { opacity:0; }
+  .nav-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+  /* MOBILE MENU */
+  .nav-mobile-menu {
+    position:fixed; top:60px; left:0; right:0; bottom:0;
+    background:var(--void); z-index:150;
+    display:flex; flex-direction:column;
+    padding:40px 28px; gap:8px;
+    transform:translateX(100%); transition:transform .35s ease;
+    border-top:1px solid var(--wire);
+  }
+  .nav-mobile-menu.open { transform:translateX(0); }
+  .nav-mobile-menu a {
+    color:var(--ivory); text-decoration:none;
+    font-size:1.1rem; font-weight:300; letter-spacing:.08em;
+    text-transform:uppercase; padding:16px 0;
+    border-bottom:1px solid var(--wire);
+    transition:color .2s;
+  }
+  .nav-mobile-menu a:hover { color:var(--gold); }
+  .nav-mobile-menu a.gold { color:var(--gold); }
 
   /* HERO */
   .hero { grid-template-columns:1fr; min-height:auto; }
@@ -854,13 +913,26 @@ footer {
     <a href="#work">Réalisations</a>
     <a href="#process">Méthodologie</a>
     <a href="#pricing">Tarifs</a>
-    <a href="/ressources.html" style="color:var(--gold);">Ressources</a>
+    <a href="#ressources" style="color:var(--gold);">Ressources</a>
   </div>
   <div class="nav-right">
     <div class="nav-line"></div>
     <a href="#contact" class="nav-cta">Devis gratuit</a>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" style="display:none;">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Notre approche</a>
+  <a href="#work" onclick="toggleMenu()">Réalisations</a>
+  <a href="#process" onclick="toggleMenu()">Méthodologie</a>
+  <a href="#pricing" onclick="toggleMenu()">Tarifs</a>
+  <a href="#ressources" onclick="toggleMenu()" class="gold">Ressources</a>
+  <a href="#contact" onclick="toggleMenu()" style="margin-top:16px;color:var(--gold);font-weight:500;">→ Devis gratuit</a>
+</div>
 
 <!-- HERO -->
 <div id="progress"></div>
@@ -1373,6 +1445,64 @@ footer {
   </div>
 </section>
 
+<!-- RESSOURCES -->
+<section id="ressources" style="background:var(--layer);border-top:1px solid var(--wire);">
+  <div class="wrap">
+
+    <div class="eyebrow r" style="justify-content:center;margin-bottom:12px;">Ressources gratuites</div>
+    <h2 class="sec-title r" style="text-align:center;max-width:640px;margin:0 auto 16px;">Des outils concrets pour<br><em>lancer votre présence en ligne.</em></h2>
+    <p class="sec-body r" style="text-align:center;max-width:520px;margin:0 auto 48px;">Deux ressources pensées pour les artisans qui veulent avancer — sans jargon, sans agence.</p>
+
+    <div class="res-grid r">
+
+      <!-- KIT GRATUIT -->
+      <div class="res-card">
+        <div class="res-badge">100% Gratuit — PDF 16 pages</div>
+        <h3 id="lead-title" class="res-title">Kit de lancement web<br><em>pour artisans.</em></h3>
+        <p id="lead-desc" class="res-desc">Recevez immédiatement par email un document opérationnel pour mettre votre activité en ligne sans perdre de temps.</p>
+        <ul id="lead-items" class="res-list">
+          <li><span>✦</span>Checklist 30 points — présence en ligne complète</li>
+          <li><span>✦</span>Guide Google My Business étape par étape</li>
+          <li><span>✦</span>Stratégie avis clients + templates de demande</li>
+          <li><span>✦</span>Plan d'action 30 jours clé en main</li>
+          <li><span>✦</span>Mini-audit de votre fiche Google</li>
+          <li><span>✦</span>Lexique digital pour artisans</li>
+        </ul>
+        <div id="leadFormIndex">
+          <div class="res-form-row">
+            <input id="fn-idx" type="text" placeholder="Prénom" class="res-input" required>
+            <input id="em-idx" type="email" placeholder="Email professionnel" class="res-input" required>
+          </div>
+          <button id="leadBtnIdx" onclick="submitLeadIndex()" class="btn-gold res-btn"><span>Recevoir le kit gratuit →</span></button>
+          <p class="res-note">Pas de spam</p>
+        </div>
+        <div id="leadSuccessIndex" style="display:none;text-align:center;padding:32px 0;">
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;color:var(--gold);margin-bottom:8px;">✦ Envoyé !</div>
+          <p style="font-size:.82rem;color:var(--smoke);">Vérifiez votre boîte email — le kit arrive dans quelques minutes.</p>
+        </div>
+      </div>
+
+      <!-- KIT PAYANT -->
+      <div class="res-card res-card-alt">
+        <div class="res-badge">Boîte à outils complète</div>
+        <div class="res-price">47€</div>
+        <h3 id="kit-title" class="res-title">Boîte à outils<br><em>artisans &amp; services locaux.</em></h3>
+        <p id="kit-desc" class="res-desc">Tout ce qu'il faut pour attirer des clients locaux — prêt à l'emploi, sans connaissance digitale requise.</p>
+        <ul id="kit-items" class="res-list">
+          <li><span>✦</span>30 descriptions GMB optimisées par métier</li>
+          <li><span>✦</span>15 réponses-types aux avis Google</li>
+          <li><span>✦</span>10 posts réseaux sociaux avec hashtags locaux</li>
+          <li><span>✦</span>Script d'appel pour convertir un devis en client</li>
+          <li><span>✦</span>Mini-méthode SEO local — 5 étapes Google Maps</li>
+          <li><span>✦</span>Outil de suivi des devis + script de relance</li>
+        </ul>
+        <a id="kit-buy-url" href="#contact" class="btn-gold res-btn"><span>Obtenir la boîte à outils →</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <div class="cta-section" id="contact">
   <div class="cta-morph">
@@ -1798,6 +1928,49 @@ if(fsForm){
       btn.style.opacity='1';
     }
   });
+}
+
+/* ── HAMBURGER MENU ── */
+function toggleMenu(){
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('mobileMenu');
+  h.classList.toggle('open');
+  m.classList.toggle('open');
+  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+}
+
+/* ── LEAD FORM INDEX ── */
+async function submitLeadIndex(){
+  const fn = document.getElementById('fn-idx').value.trim();
+  const em = document.getElementById('em-idx').value.trim();
+  const btn = document.getElementById('leadBtnIdx');
+  if(!fn || !em || !em.includes('@')) {
+    btn.querySelector('span').textContent = 'Remplissez tous les champs';
+    setTimeout(() => btn.querySelector('span').textContent = 'Recevoir le kit gratuit →', 2000);
+    return;
+  }
+  btn.querySelector('span').textContent = 'Envoi en cours...';
+  btn.disabled = true;
+  try {
+    const formData = new FormData();
+    formData.append('email', em);
+    formData.append('prenom', fn);
+    formData.append('_subject', 'Nouveau lead kit gratuit — ' + fn);
+    const res = await fetch('https://formspree.io/f/xpqkrvbl', {
+      method: 'POST', body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    if(res.ok) {
+      document.getElementById('leadFormIndex').style.display = 'none';
+      document.getElementById('leadSuccessIndex').style.display = 'block';
+    } else {
+      btn.querySelector('span').textContent = 'Erreur, réessayez';
+      btn.disabled = false;
+    }
+  } catch(e) {
+    btn.querySelector('span').textContent = 'Erreur, réessayez';
+    btn.disabled = false;
+  }
 }
 
 /* ── FAQ ── */
