@@ -6,6 +6,11 @@
   to = "/ressources.html"
   status = 200
 
+[[redirects]]
+  from = "/blog"
+  to = "/blog/index.html"
+  status = 200
+
 [[headers]]
   for = "/assets/*.pdf"
   [headers.values]
