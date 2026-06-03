@@ -290,7 +290,7 @@ nav.s { background:rgba(5,7,6,0.94); backdrop-filter:blur(24px); border-color:va
 }
 @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
 
-.hero-actions { display:flex; gap:16px; align-items:center; animation:fadeUp .8s .75s both; }
+.hero-actions { display:flex; gap:16px; align-items:center; flex-wrap:wrap; animation:fadeUp .8s .75s both; }
 .btn-gold {
   background:var(--gold); color:var(--void);
   padding:14px 36px; font-size:.75rem; font-weight:500;
@@ -653,6 +653,18 @@ footer {
 .res-btn { display:block; width:100%; text-align:center; text-decoration:none; }
 .res-note { font-size:.68rem; color:var(--smoke); text-align:center; margin-top:10px; }
 
+/* MOBILE MENU — caché par défaut sur tous les écrans */
+.nav-mobile-menu {
+  display:none !important;
+  position:fixed; top:60px; left:0; right:0; bottom:0;
+  background:var(--void); z-index:150;
+  flex-direction:column;
+  padding:40px 28px; gap:8px;
+  transform:translateX(100%); transition:transform .35s ease;
+  border-top:1px solid var(--wire);
+}
+.nav-mobile-menu.open { transform:translateX(0); display:flex !important; }
+
 /* ── MOBILE ── */
 .expertise-grid {
   display:grid;
@@ -669,9 +681,7 @@ footer {
   .res-form-row { grid-template-columns:1fr !important; }
   .res-input { border-right:none !important; border-bottom:1px solid var(--wire); }
   .res-input:last-child { border-bottom:none; }
-  .expertise-grid {
-    grid-template-columns:1fr !important;
-  }
+  .expertise-grid { grid-template-columns:1fr !important; }
   body { cursor:auto; }
   #cur,#cur2 { display:none; }
 
@@ -679,12 +689,18 @@ footer {
   nav { padding:0 20px; height:56px; }
   .nav-center,.nav-line { display:none; }
   .nav-cta { font-size:.65rem; padding:8px 14px; }
-
   .nav-hamburger {
     display:flex !important;
     flex-direction:column; gap:5px;
     cursor:pointer; padding:6px; z-index:200;
   }
+  .nav-hamburger span {
+    display:block; width:22px; height:1.5px;
+    background:var(--ivory); transition:all .3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .nav-hamburger.open span:nth-child(2) { opacity:0; }
+  .nav-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
   .nav-mobile-menu a {
     color:var(--ivory); text-decoration:none;
     font-size:1.1rem; font-weight:300; letter-spacing:.08em;
@@ -694,25 +710,6 @@ footer {
   }
   .nav-mobile-menu a:hover { color:var(--gold); }
   .nav-mobile-menu a.gold { color:var(--gold); }
-  .nav-hamburger span {
-    display:block; width:22px; height:1.5px;
-    background:var(--ivory); transition:all .3s;
-  }
-  .nav-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
-  .nav-hamburger.open span:nth-child(2) { opacity:0; }
-  .nav-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
-
-/* MOBILE MENU — caché par défaut sur desktop */
-.nav-mobile-menu {
-  display:none !important;
-  position:fixed; top:60px; left:0; right:0; bottom:0;
-  background:var(--void); z-index:150;
-  flex-direction:column;
-  padding:40px 28px; gap:8px;
-  transform:translateX(100%); transition:transform .35s ease;
-  border-top:1px solid var(--wire);
-}
-.nav-mobile-menu.open { transform:translateX(0); display:flex !important; }
 
   /* HERO */
   .hero { grid-template-columns:1fr; min-height:auto; }
@@ -915,6 +912,7 @@ footer {
     <a href="#process">Méthodologie</a>
     <a href="#pricing">Tarifs</a>
     <a href="#ressources" style="color:var(--gold);">Ressources</a>
+    <a href="/blog">Blog</a>
   </div>
   <div class="nav-right">
     <div class="nav-line"></div>
@@ -932,6 +930,7 @@ footer {
   <a href="#process" onclick="toggleMenu()">Méthodologie</a>
   <a href="#pricing" onclick="toggleMenu()">Tarifs</a>
   <a href="#ressources" onclick="toggleMenu()" class="gold">Ressources</a>
+  <a href="/blog" onclick="toggleMenu()">Blog</a>
   <a href="#contact" onclick="toggleMenu()" style="margin-top:16px;color:var(--gold);font-weight:500;">→ Devis gratuit</a>
 </div>
 
@@ -1373,7 +1372,7 @@ footer {
     <div class="plans r">
       <div class="plan">
         <div class="plan-top"></div>
-        <div class="plan-name">Essentiel</div>
+        <div class="plan-name" style="margin-top:20px;">Essentiel</div>
         <div class="plan-price">900<sup>€</sup></div>
         <div class="plan-note" style="font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-size:.9rem;">Une présence professionnelle immédiate</div>
         <div class="plan-divider"></div>
@@ -1408,7 +1407,7 @@ footer {
       </div>
       <div class="plan">
         <div class="plan-top"></div>
-        <div class="plan-name">Premium</div>
+        <div class="plan-name" style="margin-top:20px;">Premium</div>
         <div class="plan-price">2 900<sup>€</sup></div>
         <div class="plan-note" style="font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-size:.9rem;">Performance maximale et accompagnement avancé</div>
         <div class="plan-divider"></div>
