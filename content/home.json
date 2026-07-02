@@ -4,7 +4,7 @@
   "seo_titre_2": "Création de site internet professionnel",
   "metric_1_val": "7j",
   "cta_secondary": "Réserver un appel",
-  "metric_2_val": "990€",
+  "metric_2_val": "900€",
   "metric_3_val": "30min",
   "metric_4_val": "48h",
   "seo_texte_1": "Klïck est une agence web basée à Paris, spécialisée dans la création de sites vitrines pour artisans, commerçants et PME. Nous concevons des sites modernes, rapides et optimisés pour le référencement naturel (SEO).",
@@ -74,7 +74,7 @@
   "problem_subtitle": "Un site web inefficace peut nuire à votre image et limiter votre développement.",
   "metric_3_label": "Appel découverte",
   "contact_title": "Demandez votre devis gratuit.",
-  "price_starter": "990",
+  "price_starter": "900",
   "footer_copy": "© 2025 Klïck — Tous droits réservés",
   "metric_4_label": "Délai de réponse",
   "process_1_tag": "Offert",
@@ -87,11 +87,11 @@
   "pricing_title": "Des solutions adaptées à vos enjeux",
   "stats": [
     {
-      "value": "8j",
+      "value": "7j",
       "label": "Délai de livraison"
     },
     {
-      "value": "990€",
+      "value": "900€",
       "label": "À partir de"
     },
     {
@@ -104,5 +104,5 @@
     }
   ],
   "hero_kpi": "Résultats",
-  "process_4_tag": "8 jours"
+  "process_4_tag": "7 jours"
 }
